@@ -10,6 +10,7 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   // this.setPosition(top, left);
 
   this.timeBetweenSteps = timeBetweenSteps;
+
   //this.step;
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
@@ -37,4 +38,5 @@ makeDancer.prototype.setPosition = function(top, left) {
     left: left
   };
   this.$node.css(styleSettings);
+  //this.$node.appendTo('.floor');
 };

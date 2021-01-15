@@ -1,6 +1,8 @@
 var makeBreakDancer = function(top, left, timeBetweenSteps) {
   var breakDancer = makeDancer.call(this, top, left, timeBetweenSteps);
+  this.$node = $('<span class="breakDancer"></span>');
   this.step();
+  this.setPosition(top, left);
 };
 
 makeBreakDancer.prototype = Object.create(makeDancer.prototype);

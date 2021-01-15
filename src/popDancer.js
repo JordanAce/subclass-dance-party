@@ -1,6 +1,7 @@
 var makePopDancer = function(top, left, timeBetweenSteps) {
   var popDancer = makeDancer.call(this, top, left, timeBetweenSteps);
   this.step();
+  this.setPosition(top, left);
 };
 
 makePopDancer.prototype = Object.create(makeDancer.prototype);
