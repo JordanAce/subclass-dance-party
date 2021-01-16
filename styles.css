@@ -1,5 +1,5 @@
 body, html{
-  height:100%;
+  height:99%;
 }
 body{
   margin: 0px;
@@ -32,22 +32,30 @@ body{
 }
 .danceFloor{
   /* flex-basis: 66.66%; */
-  height: 100%;
-  width: 100%;
+  height: 60%;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
   /* border: solid rgb(216, 181, 26); */
 }
 
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
+
 .title, .addDancerButton{
   padding:5px 12px;
-  float:right;
+  border-radius:8px;
+  display: inline-block;
+}
+.addDancerButton{
+  border-radius: 8px;
+  background-color: rgb(2, 102, 34);
 }
 .topbar{
   height:4%;
-  background-color: rgb(7, 146, 30);
-  /* margin-bottom: 18% */
+  margin-left: 22%;
+  margin-right: 22%;
 }
 .title{
   background-color: rgb(163, 22, 22);
@@ -57,13 +65,22 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
-.blinkyDancer{
-  border:10px solid rgb(42, 216, 26);
-  border-radius:10px;
-  position:absolute;
+.tinaDancer{
+  content:url('https://media3.giphy.com/media/3oa9IxsOwewOFM5SAu/giphy.gif');
+  height :30%;
+  position :absolute;
 }
-.breakDancer{
-  border:10px solid rgba(4, 20, 241, 0.884);
-  border-radius:10px;
-  position:fixed;
+.carltonDancer{
+  content:url("https://i.pinimg.com/originals/9b/53/d4/9b53d4eaf1ffb58eca857738ea925fbb.gif");
+  height: 30%;
+  position :absolute;
+}
+.dynamiteDancer{
+  content:url("https://media1.giphy.com/media/SUtvUAbKeBXiVdqCMB/source.gif");
+  height: 30%;
+  position :absolute;
+}
+
+#left{
+  float:left;
 }
