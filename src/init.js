@@ -17,28 +17,33 @@ $(document).ready(function() {
      */
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
-    // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
-    // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
       $('.topbar').height() + $('.ceiling').height() + $('.danceFloor').height() * Math.random(),
       $('.danceFloor').width() * Math.random(),
       Math.random() * 1000
     );
+
+    window.dancers.push(dancer);
     console.log(window.dancers);
     $('.danceFloor').append(dancer.$node);
   });
 
-  //   var dancer = new dancerMakerFunction(
-  //     ( $('body').height() / 3 ) + $('.floor').height() * Math.random(),
-  //     $('.floor').width() * Math.random(),
-  //     Math.random() * 1000
-  //   );
-  //   console.log($('body').height());
-  //   console.log($('.floor').height());
-  //   $('.floor').append(dancer.$node);
-  // });
+  $('.lineUpButton').on('click', function(event) {
+    console.log(window.dancers.length);
+    var incr = $('.danceFloor').height() / (window.dancers.length);
+    var base = $('.topbar').height() + $('.ceiling').height();
+    for (var i = 0; i < window.dancers.length; i++) {
+      if (i % 2 === 1) {
+        window.dancers[i].setPosition(base + i * incr, $('.danceFloor').width() * .1);
+      } else {
+        window.dancers[i].setPosition(base + i * incr, $('.danceFloor').width() * .75);
+      }
+
+    }
+  });
+  $('.mchammerDancer').mouseenter(console.log('enter'));
 });
 

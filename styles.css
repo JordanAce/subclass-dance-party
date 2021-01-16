@@ -43,7 +43,7 @@ body, a:link, a:visited, a:active{
   color: lightblue;
 }
 
-.title, .addDancerButton{
+.title, .addDancerButton, .lineUpButton{
   padding:5px 12px;
   border-radius:8px;
   display: inline-block;
@@ -52,10 +52,19 @@ body, a:link, a:visited, a:active{
   border-radius: 8px;
   background-color: rgb(2, 102, 34);
 }
+ .lineUpButton{
+  padding: 5px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  width: 8%;
+  background-color: rgb(163, 22, 22);
+  text-align: center;
+
+}
 .topbar{
   height:4%;
-  margin-left: 22%;
-  margin-right: 22%;
+   margin-left: 20%;
+   margin-right: 20%;
 }
 .title{
   background-color: rgb(163, 22, 22);
@@ -80,7 +89,11 @@ body, a:link, a:visited, a:active{
   height: 30%;
   position :absolute;
 }
-
+.mchammerDancer{
+  content:url('https://thumbs.gfycat.com/UncommonInfiniteDuckbillplatypus-max-1mb.gif');
+  height: 30%;
+  position :absolute;
+}
 #left{
   float:left;
 }
