@@ -16,3 +16,7 @@ makeDancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
+makeDancer.prototype.pairUp = function(top, left, topTwo, leftTwo) {
+  this.setPosition(top, left);
+  setTimeout(this.pairUp.bind(this), 1500, topTwo, leftTwo, top, left);
+};

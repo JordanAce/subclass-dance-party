@@ -19,20 +19,32 @@ $(document).ready(function() {
 
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
-
     var dancer = new dancerMakerFunction(
       $('.topbar').height() + $('.ceiling').height() + $('.danceFloor').height() * Math.random(),
       $('.danceFloor').width() * Math.random(),
       Math.random() * 1000
     );
-    console.log(dancer.constructor.name);
     window.dancers.push(dancer);
     console.log(window.dancers);
     $('.danceFloor').append(dancer.$node);
   });
 
+  $('.partnerUpButton').on('click', function(event) {
+    var incr = 130;
+
+    for (var i = 0; i < window.dancers.length - 1; i += 2) {
+      var j = i + 1;
+      var height = $('.topbar').height() + $('.ceiling').height() + $('.danceFloor').height() * Math.random();
+      var width = $('.danceFloor').width() * Math.random();
+      window.dancers[ i ].pairUp(height, width, height, width + incr);
+      window.dancers[ j ].pairUp(height, width + incr, height, width);
+    }
+
+    //create new multi-array with each dancer height and width position and location in window.dancers array (i)
+    //loop through
+  });
+
   $('.lineUpButton').on('click', function(event) {
-    console.log(window.dancers.length);
     var incr = $('.danceFloor').height() / (window.dancers.length);
     var base = $('.topbar').height() + $('.ceiling').height();
     for (var i = 0; i < window.dancers.length; i++) {
@@ -44,6 +56,7 @@ $(document).ready(function() {
 
     }
   });
+
   $(document).on('mouseover', '.mchammerDancer', function() {
     for (var i = 0; i < window.dancers.length; i++ ) {
       if ( window.dancers[i].constructor.name === 'makeMCHammerDancer' ) {
