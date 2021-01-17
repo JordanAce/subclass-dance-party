@@ -4,23 +4,19 @@ var makeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
 };
 
-
 makeDancer.prototype.step = function() {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
-  // Use css top and left properties to position our <span> tag
-  // where it belongs on the page. See http://api.jquery.com/css/
-  //
   var styleSettings = {
     top: top,
     left: left
   };
   this.$node.css(styleSettings);
-  //this.$node.appendTo('.floor');
 };
 
-makeDancer.prototype.lineUp = function() {
-
+makeDancer.prototype.pairUp = function(top, left, topTwo, leftTwo) {
+  this.setPosition(top, left);
+  setTimeout(this.pairUp.bind(this), 1500, topTwo, leftTwo, top, left);
 };

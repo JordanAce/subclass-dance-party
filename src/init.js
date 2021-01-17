@@ -19,15 +19,25 @@ $(document).ready(function() {
 
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
-
     var dancer = new dancerMakerFunction(
       $('.topbar').height() + $('.ceiling').height() + $('.danceFloor').height() * Math.random(),
       $('.danceFloor').width() * Math.random(),
       Math.random() * 1000
     );
-
     window.dancers.push(dancer);
     $('.danceFloor').append(dancer.$node);
+  });
+
+  $('.partnerUpButton').on('click', function(event) {
+    var incr = 130;
+
+    for (var i = 0; i < window.dancers.length - 1; i += 2) {
+      var j = i + 1;
+      var height = $('.topbar').height() + $('.ceiling').height() + $('.danceFloor').height() * Math.random();
+      var width = $('.danceFloor').width() * Math.random();
+      window.dancers[ i ].pairUp(height, width, height, width + incr);
+      window.dancers[ j ].pairUp(height, width + incr, height, width);
+    }
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -42,10 +52,14 @@ $(document).ready(function() {
     }
   });
 
-  $('div .mchammerDancer').on('mouseover', function() {
-    alert('test');
+  $(document).on('mouseover', '.mchammerDancer', function() {
+    for (var i = 0; i < window.dancers.length; i++ ) {
+      if ( window.dancers[i].constructor.name === 'makeMCHammerDancer' ) {
+        window.dancers[i].setPosition( $('.topbar').height() + $('.ceiling').height() + $('.danceFloor').height() * Math.random(),
+          $('.danceFloor').width() * Math.random());
+      }
+    }
   });
-
 
 });
 
