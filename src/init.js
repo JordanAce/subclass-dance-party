@@ -39,9 +39,6 @@ $(document).ready(function() {
       window.dancers[ i ].pairUp(height, width, height, width + incr);
       window.dancers[ j ].pairUp(height, width + incr, height, width);
     }
-
-    //create new multi-array with each dancer height and width position and location in window.dancers array (i)
-    //loop through
   });
 
   $('.lineUpButton').on('click', function(event) {
