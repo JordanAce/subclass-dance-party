@@ -25,7 +25,7 @@ $(document).ready(function() {
       $('.danceFloor').width() * Math.random(),
       Math.random() * 1000
     );
-
+    console.log(dancer.constructor.name);
     window.dancers.push(dancer);
     console.log(window.dancers);
     $('.danceFloor').append(dancer.$node);
@@ -44,6 +44,14 @@ $(document).ready(function() {
 
     }
   });
-  $('.mchammerDancer').mouseenter(console.log('enter'));
+  $(document).on('mouseover', '.mchammerDancer', function() {
+    for (var i = 0; i < window.dancers.length; i++ ) {
+      if ( window.dancers[i].constructor.name === 'makeMCHammerDancer' ) {
+        window.dancers[i].setPosition( $('.topbar').height() + $('.ceiling').height() + $('.danceFloor').height() * Math.random(),
+          $('.danceFloor').width() * Math.random());
+      }
+    }
+  });
+
 });
 

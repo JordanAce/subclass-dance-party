@@ -4,8 +4,7 @@ body, html{
 body{
   margin: 0px;
   font-size: 18px;
-  /* background-image: url('https://thumbs.gfycat.com/PoshHotHeron-size_restricted.gif'); */
-  background-image: url('https://lh3.googleusercontent.com/proxy/qQi7KcE_xQJfoDBTpENWnK43oRSD6IrNO0X47JQ18c_nltBn7RthncZ1bwIj7oHa7WXr5afclG5FFnB0iEz8vQwFjxPQge2kYX23SzqmzHjSj7BF3y4bSR_jrVmXEwLNqhLPV66h');
+  background-image: url("https://lh3.googleusercontent.com/proxy/iOqoW6pQLrePbemzPgx-Rv_InzDlIznxe73tMXWcgtJTCuwhA4ozvWpMQnV3Is3g11JiEV2GK2zzqUOoLUES0ITyW9GXS3ILNlPMHWgCPnXj_VwIatfMe4WxXadhmo8sXLaBzIjk");
   background-color:rgb(16, 30, 224);
   background-size: cover;
 }
@@ -13,30 +12,22 @@ body{
   display: inline-block;
   height: 96%;
   width: 100%;
-  /* border: solid rgb(26, 216, 35); */
-  /* display: flex;
-  flex-direction: column; */
 }
 .ceiling{
-  /* flex-basis: 33.33%; */
   display:inline-block;
   height: 33%;
   width: 100%;
 }
 .floor{
-  /* flex-basis: 66.66%; */
   display:inline-block;
   height: 66.66%;
   width: 100%;
-  /* border: solid rgb(216, 26, 26); */
 }
 .danceFloor{
-  /* flex-basis: 66.66%; */
   height: 60%;
   width: 90%;
   padding-left: 5%;
   padding-right: 5%;
-  /* border: solid rgb(216, 181, 26); */
 }
 
 body, a:link, a:visited, a:active{
