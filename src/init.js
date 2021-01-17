@@ -27,12 +27,10 @@ $(document).ready(function() {
     );
 
     window.dancers.push(dancer);
-    console.log(window.dancers);
     $('.danceFloor').append(dancer.$node);
   });
 
   $('.lineUpButton').on('click', function(event) {
-    console.log(window.dancers.length);
     var incr = $('.danceFloor').height() / (window.dancers.length);
     var base = $('.topbar').height() + $('.ceiling').height();
     for (var i = 0; i < window.dancers.length; i++) {
@@ -41,9 +39,13 @@ $(document).ready(function() {
       } else {
         window.dancers[i].setPosition(base + i * incr, $('.danceFloor').width() * .75);
       }
-
     }
   });
-  $('.mchammerDancer').mouseenter(console.log('enter'));
+
+  $('div .mchammerDancer').on('mouseover', function() {
+    alert('test');
+  });
+
+
 });
 

@@ -94,6 +94,7 @@ body, a:link, a:visited, a:active{
   height: 30%;
   position :absolute;
 }
+
 #left{
   float:left;
 }
